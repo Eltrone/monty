@@ -69,7 +69,7 @@ void parse_line(char *line, stack_t **stack, unsigned int line_number)
 	instruction_t instruction;
 
 	opcode = strtok(line, "\n ");
-	if (!opcode || opcode[0] == '#' || isspace((unsigned char)opcode[0]))
+	if (!opcode || opcode[0] == '#')
 		return;
 
 	instruction = get_instruction(opcode);
