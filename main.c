@@ -53,6 +53,8 @@ void parse_line(char *line, stack_t **stack, unsigned int line_number)
     if (!opcode || opcode[0] == '#')
         return;
 
+ 
+    
     instruction = get_instruction(opcode);
     if (instruction.f != NULL)
         instruction.f(stack, line_number);
