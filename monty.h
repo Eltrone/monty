@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,8 +41,11 @@ void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
 /* Prototypes for any additional utility functions */
-void push(stack_t **stack, int value);
+void push(stack_t **stack, unsigned int line_number);
 int is_empty(stack_t *stack);
 void print_stack(stack_t *stack);
+
+/* Prototype for the is_number function */
+int is_number(char *str);
 
 #endif /* MONTY_H */
