@@ -46,10 +46,9 @@ int is_empty(stack_t *stack);
 void print_stack(stack_t *stack);
 void pall(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
-void div(stack_t **stack, unsigned int line_number);
+void monty_div(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
-
 
 /* Prototype for the is_number function */
 int is_number(char *str);

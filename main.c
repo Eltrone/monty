@@ -115,7 +115,7 @@ instruction_t get_instruction(char *opcode)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
-		{"div", div},
+		{"div", monty_div},
 		{"mul", mul},
 		{"mod", mod},
 		{NULL, NULL}
