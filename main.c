@@ -115,6 +115,7 @@ instruction_t get_instruction(char *opcode)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", div},
 		{NULL, NULL}
 	};
 	int i;
