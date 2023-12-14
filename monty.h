@@ -33,6 +33,34 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * enum mode_e - Enumerator for stack operation modes
+ * @STACK: Enumerator for Stack mode (Last In, First Out)
+ * @QUEUE: Enumerator for Queue mode (First In, First Out)
+ *
+ * Description: This enum defines the mode of operation for the stack.
+ * It can operate in either STACK (LIFO) mode or QUEUE (FIFO) mode.
+ */
+typedef enum mode_e
+{
+    STACK,
+    QUEUE
+} mode_t;
+
+/**
+ * struct info_s - Structure for managing stack operations and mode
+ * @top: Pointer to the top of the stack
+ * @mode: Current mode of the stack (STACK or QUEUE)
+ *
+ * Description: This structure holds information about the current state
+ * of the stack, including its top element and current mode of operation.
+ */
+typedef struct info_s
+{
+    stack_t *top;   // Pointer to the top of the stack
+    mode_t mode;    // Current operation mode of the stack
+} info_t;
+
 /* Prototypes for opcode functions */
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
