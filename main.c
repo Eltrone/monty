@@ -48,6 +48,7 @@ void execute_monty(FILE *file, stack_t **stack)
 	char buffer[1024];
 	unsigned int line_number = 0;
 
+
 	while (fgets(buffer, sizeof(buffer), file) != NULL)
 	{
 		line_number++;
@@ -89,6 +90,7 @@ void parse_line(char *line, stack_t **stack, unsigned int line_number)
 void free_stack(stack_t *stack)
 {
 	stack_t *temp;
+
 	while (stack)
 	{
 		temp = stack;
