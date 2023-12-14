@@ -33,23 +33,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-typedef enum mode_e
-{
-    MODE_STACK,
-    MODE_QUEUE
-} mode_t;
-
-typedef struct global_s
-{
-    mode_t mode;
-    stack_t *top;
-} global_t;
-
-extern global_t global_info;
-
-void stack(stack_t **stack, unsigned int line_number);
-void queue(stack_t **stack, unsigned int line_number);
-
 /* Prototypes for opcode functions */
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
