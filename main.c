@@ -55,6 +55,7 @@ void execute_monty(FILE *file, stack_t **stack)
 	}
 }
 
+
 /**
  * parse_line - Parses each line of the Monty bytecode file
  * @line: Line from the file
@@ -115,6 +116,7 @@ instruction_t get_instruction(char *opcode)
 	};
 	int i;
 	instruction_t temp;
+
 
 	for (i = 0; instructions[i].opcode; i++)
 	{
