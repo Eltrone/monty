@@ -7,40 +7,44 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node;
-	char *arg;
-	int num;
+    stack_t *new_node, *temp;
+    char *arg;
+    int num;
 
-	/* Obtention de l'argument pour push */
-	arg = strtok(NULL, " \n\t\r");
-	if (arg == NULL || !is_number(arg))
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+    arg = strtok(NULL, " \n\t\r");
+    if (arg == NULL || !is_number(arg))
+    {
+        fprintf(stderr, "L%d: usage: push integer\n", line_number);
+        exit(EXIT_FAILURE);
+    }
 
-	/* Conversion de l'argument en entier */
-	num = atoi(arg);
+    num = atoi(arg);
+    new_node = malloc(sizeof(stack_t));
+    if (new_node == NULL)
+    {
+        fprintf(stderr, "Error: malloc failed\n");
+        exit(EXIT_FAILURE);
+    }
 
-	/* Création d'un nouveau nœud */
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+    new_node->n = num;
+    new_node->prev = NULL;
+    new_node->next = NULL;
 
-	/* Initialisation du nouveau nœud */
-	new_node->n = num;
-	new_node->prev = NULL;
-	new_node->next = *stack;
-
-	/* Mise à jour de l'ancien sommet de la pile */
-	if (*stack != NULL)
-		(*stack)->prev = new_node;
-
-	/* Mise à jour du sommet de la pile */
-	*stack = new_node;
+    if (monty_mode == MODE_STACK || *stack == NULL)
+    {
+        new_node->next = *stack;
+        if (*stack != NULL)
+            (*stack)->prev = new_node;
+        *stack = new_node;
+    }
+    else
+    {
+        temp = *stack;
+        while (temp->next != NULL)
+            temp = temp->next;
+        temp->next = new_node;
+        new_node->prev = temp;
+    }
 }
 
 /**
