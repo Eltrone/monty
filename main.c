@@ -7,6 +7,8 @@ void free_stack(stack_t *stack);
 instruction_t get_instruction(char *opcode);
 void parse_line(char *line, stack_t **stack, unsigned int line_number);
 
+monty_mode_t monty_mode = MODE_STACK;
+
 /**
  * main - Entry point
  * @argc: Argument count
@@ -99,6 +101,7 @@ void free_stack(stack_t *stack)
 	}
 }
 
+
 /**
  * get_instruction - Matches an opcode to its corresponding function
  * @opcode: The opcode to match
@@ -122,6 +125,8 @@ instruction_t get_instruction(char *opcode)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", op_stack},
+		{"queue", op_queue},
 		{NULL, NULL}
 	};
 	int i;

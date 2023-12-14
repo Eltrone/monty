@@ -53,8 +53,17 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void op_stack(stack_t **stack, unsigned int line_number);
+void op_queue(stack_t **stack, unsigned int line_number);
 
 /* Prototype for the is_number function */
 int is_number(char *str);
+
+typedef enum monty_mode_s {
+    MODE_STACK,
+    MODE_QUEUE
+} monty_mode_t;
+
+extern monty_mode_t monty_mode;
 
 #endif /* MONTY_H */
