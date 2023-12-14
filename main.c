@@ -120,6 +120,7 @@ instruction_t get_instruction(char *opcode)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 	int i;
