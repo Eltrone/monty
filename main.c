@@ -80,8 +80,10 @@ void free_stack(stack_t *stack)
 instruction_t get_instruction(char *opcode)
 {
     instruction_t instructions[] = {
-        {"pint", pint},
-        {"pop", pop},
+        {"push", push},
+	{"pint", pint},
+        {"pall", pall},
+	{"pop", pop},
         {"swap", swap},
         {"add", add},
         {"nop", nop},
