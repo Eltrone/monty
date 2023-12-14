@@ -118,6 +118,7 @@ instruction_t get_instruction(char *opcode)
 		{"div", monty_div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 	int i;
