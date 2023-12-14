@@ -7,7 +7,7 @@
  *
  * Description: Prints characters represented
  * by the integer values in the stack
- * until the stack is over, the value is 0, 
+ * until the stack is over, the value is 0,
  * or the value is not in the ASCII range.
  */
 void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))

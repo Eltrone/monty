@@ -1,9 +1,13 @@
 #include "monty.h"
 
 /**
- * div - Divise le 2ème élément en haut de la pile par le sommet de la pile
- * @stack: double pointeur vers le sommet de la pile
- * @line_number: numéro de la ligne dans le script
+ * monty_div - Divides the second top element of the stack by the top element.
+ * @stack: Double pointer to the top of the stack.
+ * @line_number: The current line number in the Monty bytecodes file.
+ *
+ * Description: If the stack contains fewer than two elements or
+ * the top element of the stack is 0, the function prints an error message
+ * and exits with the status EXIT_FAILURE.
  */
 void monty_div(stack_t **stack, unsigned int line_number)
 {
